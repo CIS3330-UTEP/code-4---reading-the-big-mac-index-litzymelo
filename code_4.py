@@ -8,7 +8,7 @@ def get_big_mac_price_by_year(year,country_code):
     query=(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
     result_df = df.query(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
     result = (round(result_df['dollar_price'].mean(),2))
-    return result_df
+    return result
     
 
 def get_big_mac_price_by_country(country_code):
