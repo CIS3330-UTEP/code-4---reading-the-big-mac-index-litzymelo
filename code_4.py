@@ -3,10 +3,9 @@ import pandas as pd
 big_mac_file = './big-mac-full-index.csv'
 
 def get_big_mac_price_by_year(year,country_code):
-    country_code = country_code.upper
+    country_code = country_code.upper()
     df = pd.read_csv(big_mac_file)
-    (df'[iso_a3] + [year]01-01 = [year]12-01')
-                         
+   query(f'{iso_a3},{year}01-01 => {year}12-31')
     return result
 
 
