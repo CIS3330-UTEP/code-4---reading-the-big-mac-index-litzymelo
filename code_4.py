@@ -6,7 +6,7 @@ def get_big_mac_price_by_year(year,country_code):
     country_code = country_code.upper()
     df = pd.read_csv(big_mac_file)
     query=(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
-    return result
+    result.df = df.query(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
 
 
     
@@ -14,7 +14,7 @@ def get_big_mac_price_by_year(year,country_code):
 def get_big_mac_price_by_country(country_code):
     country_code = country_code.upper()
     df = pd.read_csv(big_mac_file)
-    query(f'{})
+    query(f"{})
     
 
     
