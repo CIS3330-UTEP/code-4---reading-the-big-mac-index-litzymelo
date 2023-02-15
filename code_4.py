@@ -6,7 +6,11 @@ def get_big_mac_price_by_year(year,country_code):
     country_code = country_code.upper()
     df = pd.read_csv(big_mac_file)
     query=(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
-    result.df = df.query(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
+    result_df = df.query(f"{iso_a3} == '{year}'and date > {year}-01-01 and date < {year}-12-31")
+    type((result_df['dollar_price'].mean))
+    return result_df
+
+
 
 
     
