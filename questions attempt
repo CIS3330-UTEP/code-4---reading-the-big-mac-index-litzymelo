@@ -1,0 +1,23 @@
+#1
+import pandas as pd
+filename = "./big-mac-full-index.csv"
+df = pd.read_csv(filename)
+query_string = "(iso_a3 == 'arg')"
+print(query_string)
+arg_df = df.query(query_string)
+print(round(arg_df['dollar_price'].mean(),2))
+print(arg_df['dollar_price'].max())
+
+min_df_idx = df['dollar_price'].idxmin()
+max_df_idx = df['dollar_price'].idxmax()
+
+print(min_df_idx)
+print(max_df_idx)
+
+min_item = df.loc[min_df_idx]
+max_item = df.loc[max_df_idx]
+print(min_item)
+print('\n')
+print(max_item)
+
+print(f"{min_item['name']}({min_item['iso_a3']}):{round(min_item['dollar_price'],2)}")
